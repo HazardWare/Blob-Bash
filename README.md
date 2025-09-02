@@ -1,3 +1,13 @@
+# **ATTENTION!!!**
+This version of Blob Bash is ***DISCONTINUED***.
+If you're interested in the newer version, visit [Blob Bash Redux]()
+
+---
+---
+---
+---
+---
+
 # Blob-Bash
 A 2D fighting platformer game about turning your friends into puddles on the ground.
 ## Game Mechanics
