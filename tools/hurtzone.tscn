@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://qdgwww36ubss"]
+
+[ext_resource type="Texture2D" uid="uid://baq1pmddw2ss7" path="res://tilesets/assets/tool_tiles.png" id="1_ibglt"]
+[ext_resource type="Script" uid="uid://bfqywux430ug" path="res://tools/scripts/hurtzone.gd" id="1_sambb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xev2b"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88tia"]
+atlas = ExtResource("1_ibglt")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Hurtzone" type="Area2D"]
+script = ExtResource("1_sambb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_repeat = 2
+shape = SubResource("RectangleShape2D_xev2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+texture_repeat = 2
+texture = SubResource("AtlasTexture_88tia")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

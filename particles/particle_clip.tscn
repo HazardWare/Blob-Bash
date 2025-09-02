@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://7r5y1234w84p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs21c"]
+size = Vector2(16, 16)
+
+[node name="ParticleClip" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qs21c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_children = 1
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0, 0, 0, 0.501961)

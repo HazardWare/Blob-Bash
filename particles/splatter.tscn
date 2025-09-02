@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4nf0fypk4pfj"]
+
+[ext_resource type="Texture2D" uid="uid://che161wcx86r6" path="res://particles/splatter.png" id="1_cmw4g"]
+[ext_resource type="Script" uid="uid://ddchro2pnnbsx" path="res://particles/splatter.gd" id="2_e5bw5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ie4xq"]
+a = Vector2(-8, -8)
+b = Vector2(8, -8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw1nc"]
+atlas = ExtResource("1_cmw4g")
+region = Rect2(0, 0, 19, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l4v6"]
+atlas = ExtResource("1_cmw4g")
+region = Rect2(0, 0, 19, 15)
+
+[node name="Splatter" type="Area2D" groups=["particles"]]
+light_mask = 16
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_e5bw5")
+
+[node name="SplatterCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 8)
+shape = SubResource("SegmentShape2D_ie4xq")
+
+[node name="SplatterParticle" type="CPUParticles2D" parent="."]
+light_mask = 16
+position = Vector2(-0.5, 7.5)
+emitting = false
+amount = 1
+lifetime = 60000.0
+one_shot = true
+texture = SubResource("AtlasTexture_cw1nc")
+spread = 0.0
+gravity = Vector2(0, 0)
+angle_min = -720.0
+angle_max = 720.0
+
+[node name="SplatterParticleS" type="Sprite2D" parent="."]
+light_mask = 16
+position = Vector2(-0.5, 7.5)
+texture = SubResource("AtlasTexture_4l4v6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

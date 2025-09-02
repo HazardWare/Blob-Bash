@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsm6w6q71u4up"]
+
+[ext_resource type="Script" uid="uid://lf0mrb1ocqop" path="res://gamescenes/scripts/customization_container.gd" id="1_2myn3"]
+[ext_resource type="PackedScene" uid="uid://cvj6hfmptems0" path="res://char/player.tscn" id="2_osnbd"]
+
+[node name="Base" type="MarginContainer"]
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+script = ExtResource("1_2myn3")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.235294)
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SplitContainer" type="SplitContainer" parent="."]
+layout_mode = 2
+vertical = true
+
+[node name="Player" type="Control" parent="SplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.75
+
+[node name="Player" parent="SplitContainer/Player" instance=ExtResource("2_osnbd")]
+position = Vector2(0, 60)
+scale = Vector2(3, 3)
+is_alive = false
+start = Vector2(0, 60)
+
+[node name="Color" type="MarginContainer" parent="SplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MarginColor" type="MarginContainer" parent="SplitContainer/Color"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorPicker" type="ColorPicker" parent="SplitContainer/Color/MarginColor"]
+z_index = 15
+layout_mode = 2
+alignment = 1
+edit_alpha = false
+color_mode = 1
+picker_shape = 4
+can_add_swatches = false
+sampler_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="Background" type="ColorRect" parent="SplitContainer/Color"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.235294)
+
+[connection signal="color_changed" from="SplitContainer/Color/MarginColor/ColorPicker" to="." method="_on_color_picker_color_changed"]

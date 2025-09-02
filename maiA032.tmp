@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm02ggc3q0qub"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_4ynrn"]
+[ext_resource type="PackedScene" uid="uid://cvj6hfmptems0" path="res://char/player.tscn" id="2_if45h"]
+[ext_resource type="PackedScene" uid="uid://0uc2ptb8y752" path="res://gamescenes/stagetemplate.tscn" id="2_v3ybm"]
+[ext_resource type="PackedScene" uid="uid://3l1ky7pexl4s" path="res://tools/multi_target_cam.tscn" id="5_pxapk"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4ynrn")
+
+[node name="Stagetemplate" parent="." instance=ExtResource("2_v3ybm")]
+
+[node name="Player1" parent="." instance=ExtResource("2_if45h")]
+modulate = Color(1, 0.388235, 0.478431, 1)
+position = Vector2(176, 256)
+colorRgb = Color(1, 0.388235, 0.478431, 1)
+faceType = "angry"
+cosmetic = null
+x_start = 176.0
+y_start = 256.0
+
+[node name="Player2" parent="." instance=ExtResource("2_if45h")]
+modulate = Color(0.207843, 0.576471, 1, 1)
+position = Vector2(1136, 384)
+player_id = 2
+colorRgb = Color(0.207843, 0.576471, 1, 1)
+cosmetic = null
+x_start = 1136.0
+y_start = 384.0
+
+[node name="MultiTargetCam" parent="." groups=["cameras"] instance=ExtResource("5_pxapk")]
+position = Vector2(704, 348)
+scale = Vector2(1.43702, 1.43702)
+max_zoom = 10

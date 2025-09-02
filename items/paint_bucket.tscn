@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdjbmn002t62w"]
+
+[ext_resource type="Texture2D" uid="uid://doaewgmgumfni" path="res://items/assets/paintbucket.png" id="1_j1ki0"]
+[ext_resource type="Script" uid="uid://dqd6vfb6mep05" path="res://items/scripts/paint_bucket.gd" id="1_njacl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f7n3"]
+size = Vector2(14, 17)
+
+[node name="Paint Bucket" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_njacl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j1ki0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_3f7n3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

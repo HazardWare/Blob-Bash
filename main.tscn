@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm02ggc3q0qub"]
+
+[sub_resource type="GDScript" id="GDScript_g3rys"]
+script/source = "extends Node
+
+func _ready():
+	pass
+	
+# you REALLY need to work on the player joining system and make this stuff automated. PLEASE.
+
+func _process(_delta):
+	pass
+"
+
+[node name="Main" type="Node"]
+script = SubResource("GDScript_g3rys")

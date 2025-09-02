@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://pviy7n3wfe6r"]
+
+[ext_resource type="Script" uid="uid://cwl1vcdqa1adg" path="res://tools/scripts/player_spawner.gd" id="1_k88bt"]
+[ext_resource type="Texture2D" uid="uid://belmd7py2oapi" path="res://tools/assets/spawnpoint2d.png" id="2_vh0ye"]
+
+[node name="PlayerSpawner" type="Sprite2D" groups=["spawnpoints"]]
+texture = ExtResource("2_vh0ye")
+script = ExtResource("1_k88bt")

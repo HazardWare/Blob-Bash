@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgflnta6yby7u"]
+
+[ext_resource type="Script" uid="uid://cxdausffwmqot" path="res://ui/button.gd" id="1_1qfto"]
+[ext_resource type="Script" uid="uid://dxcadf3l5c578" path="res://ui/color_picker_1.gd" id="1_k7pvp"]
+
+[node name="TempColorpick" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.0
+offset_right = 101.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "Toggle Color Pickers"
+script = ExtResource("1_1qfto")
+
+[node name="Pickers" type="Node" parent="CanvasLayer/Button"]
+
+[node name="1" type="ColorPicker" parent="CanvasLayer/Button/Pickers"]
+visible = false
+offset_right = 298.0
+offset_bottom = 471.0
+edit_alpha = false
+color_mode = 1
+can_add_swatches = false
+presets_visible = false
+script = ExtResource("1_k7pvp")
+
+[node name="2" type="ColorPicker" parent="CanvasLayer/Button/Pickers"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -298.0
+offset_bottom = 471.0
+grow_horizontal = 0
+edit_alpha = false
+color_mode = 1
+can_add_swatches = false
+presets_visible = false
+script = ExtResource("1_k7pvp")
+picker_player_id = 2
+
+[connection signal="toggled" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_toggled"]

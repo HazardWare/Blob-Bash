@@ -1,0 +1,10 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cbtpul6tisukb"]
+
+[ext_resource type="PackedScene" uid="uid://qdgwww36ubss" path="res://tools/hurtzone.tscn" id="1_cwx7c"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4lbaq"]
+scenes/1/scene = ExtResource("1_cwx7c")
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetScenesCollectionSource_4lbaq")

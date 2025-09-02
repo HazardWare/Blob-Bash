@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3l1ky7pexl4s"]
+
+[ext_resource type="Script" uid="uid://dv3sf1s5238wb" path="res://tools/scripts/multi_target_cam.gd" id="1_bohtg"]
+
+[node name="MultiTargetCam" type="Camera2D" groups=["cameras"]]
+position = Vector2(960, 540)
+scale = Vector2(0.326, 0.432)
+script = ExtResource("1_bohtg")

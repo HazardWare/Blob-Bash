@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckh0b1svuk2s2"]
+
+[ext_resource type="Texture2D" uid="uid://dutmjmh1kkdr6" path="res://shaders/pointlightsoft.tres" id="1_0utjc"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u0n3d"]
+polygon = PackedVector2Array(-4, 9, -3, -6, 3, -6, 4, 9, 10, 9, 10, -11, -10, -11, -10, 9)
+
+[node name="Spotlight2D" type="PointLight2D"]
+shadow_enabled = true
+texture = ExtResource("1_0utjc")
+
+[node name="Occluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_u0n3d")
